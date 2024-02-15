@@ -21,16 +21,26 @@ void swap_i(int *a, int *b)
 */
 void bubble_sort(int *array, size_t size)
 {
-	for (size_t i = 0; i < size - 1; i++)
+	bool bubbl = false;
+
+	if (array == NULL || size < 2)
+		return;
+
+	while (bubbl == false)
 	{
-		for (size_t j = 0; j < size - i - 1; j++)
+		bubbl = true;
+		for (size_t i = 0; i < size - 1; i++)
 		{
-			if (array[j] > array[j + 1])
+			for (size_t j = 0; j < size - i - 1; j++)
 			{
-				swap_i(&array[j], &array[j + 1]);
-				print_arr(array, size);
+				if (array[j] > array[j + 1])
+				{
+					swap_i(&array[j], &array[j + 1]);
+					print_arr(array, size);
+					bubbl = false;
+				}
 			}
+			size--;
 		}
-		size--;
 	}
 }
