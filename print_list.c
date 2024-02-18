@@ -8,10 +8,10 @@
 void print_list(const listint_t *list)
 {
 	int j;
-
+	
+	j = 0;
 	while (list)
 	{
-		j = 0;
 
 		if (j > 0)
 			printf(", ");
