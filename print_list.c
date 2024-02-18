@@ -7,9 +7,8 @@
 */
 void print_list(const listint_t *list)
 {
-	int j;
-	
-	j = 0;
+	int j = 0;
+
 	while (list != NULL)
 	{
 
