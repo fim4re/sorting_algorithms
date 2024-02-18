@@ -11,7 +11,9 @@ void print_list(const listint_t *list)
 
 	while (list)
 	{
-		if (j = 0, j > 0)
+		j = 0;
+
+		if (j > 0)
 			printf(", ");
 		printf("%d", list->n);
 		++j;
