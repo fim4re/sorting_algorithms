@@ -31,14 +31,14 @@ void insertion_sort_list(listint_t **list)
 {
 	listint_t *cur = (*list)->next;
 
-	if (list == NULL || *list == NULL || cur == NULL)
+	if (list == NULL || cur == NULL)
 		return;
 
-	while (cur)
+	while (cur != NULL)
 	{
 		while ((cur->prev) && (cur->prev->n > cur->n))
 		{
-			swap_l(cur, list);
+			cur = swap_l(cur, list);
 			print_list(*list);
 		}
 		cur = cur->next;

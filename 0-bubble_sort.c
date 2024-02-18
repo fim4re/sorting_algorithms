@@ -23,6 +23,7 @@ void bubble_sort(int *array, size_t size)
 {
 	bool bubl = false;
 	size_t j, i;
+	size_t tmp = size;
 
 	if (array == NULL || size < 2)
 		return;
@@ -30,18 +31,18 @@ void bubble_sort(int *array, size_t size)
 	while (bubl == false)
 	{
 		bubl = true;
-		for (i = 0; i < size - 1; i++)
+		for (i = 0; i < tmp - 1; i++)
 		{
-			for (j = 0; j < size - i - 1; j++)
+			for (j = 1; j < tmp; j++)
 			{
-				if (array[j] > array[j + 1])
+				if (array[j - 1] > array[j])
 				{
-					swap_i(&array[j], &array[j + 1]);
+					swap_i(&array[j], &array[j - 1]);
 					print_array(array, size);
 					bubl = false;
 				}
 			}
 		}
-		size--;
+		tmp--;
 	}
 }

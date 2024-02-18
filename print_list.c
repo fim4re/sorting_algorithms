@@ -10,7 +10,7 @@ void print_list(const listint_t *list)
 	int j;
 	
 	j = 0;
-	while (list)
+	while (list != NULL)
 	{
 
 		if (j > 0)
