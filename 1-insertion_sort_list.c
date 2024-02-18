@@ -3,12 +3,12 @@
 /**
  * swap_l - Swap two nodes in a listint_t doubly-linked list.
  * @list: the list node
- * @node: the node
+ * @nd: the node
  * Return: pointer to a node
  */
-listint_t *swap_l(listint_t *node, listint_t **list)
+listint_t *swap_l(listint_t *nd, listint_t **list)
 {
-	listint_t *pr = node->prev, *cur = node;
+	listint_t *pr = nd->prev, *cur = nd;
 
 	pr->next = cur->next;
 	if (cur->next != NULL)
@@ -29,18 +29,18 @@ listint_t *swap_l(listint_t *node, listint_t **list)
  */
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *cur = (*list)->next;
+	listint_t *nd = (*list)->next;
 
-	if (list == NULL || cur == NULL)
+	if (list == NULL || nd == NULL)
 		return;
 
-	while (cur != NULL)
+	while (nd != NULL)
 	{
-		while ((cur->prev) && (cur->prev->n > cur->n))
+		while ((nd->prev) && (nd->prev->n > nd->n))
 		{
-			cur = swap_l(cur, list);
+			nd = swap_l(nd, list);
 			print_list(*list);
 		}
-		cur = cur->next;
+		nd = nd->next;
 	}
 }
