@@ -6,7 +6,7 @@
  * @node: the node
  * Return: pointer to a node
  */
-void swap_l(listint_t **list, listint_t *node)
+listint_t *swap_l(listint_t *node, listint_t **list)
 {
 	listint_t *pr = node->prev, *cur = node;
 
@@ -31,14 +31,14 @@ void insertion_sort_list(listint_t **list)
 {
 	listint_t *cur = (*list)->next;
 
-	if (list == NULL || *list == NULL || (*list)->next == NULL)
+	if (list == NULL || *list == NULL || cur == NULL)
 		return;
 
 	while (cur)
 	{
 		while ((cur->prev) && (cur->prev->n > cur->n))
 		{
-			cur = swap_l(cur, list);
+			swap_l(cur, list);
 			print_list(*list);
 		}
 		cur = cur->next;
