@@ -10,7 +10,7 @@ void swap_l(listint_t **nd, listint_t *list)
 {
 	listint_t **pr;
 
-	(*nd)->next = list->next
+	(*nd)->next = list->next;
 	if (list->next)
 		list->next->prev = *nd;
 	list->prev = (*nd)->prev;
