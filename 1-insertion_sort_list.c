@@ -6,21 +6,21 @@
  * @nd: the node
  * Return: pointer to a node
  */
-listint_t *swap_l(listint_t *nd, listint_t **list)
+void swap_l(listint_t **nd, listint_t *list)
 {
-	listint_t *pr = nd->prev, *cur = nd;
+	listint_t **pr;
 
-	pr->next = cur->next;
-	if (cur->next != NULL)
-		cur->next->prev = pr;
-	cur->prev = pr->prev;
-	cur->next = pr;
-	pr->prev = cur;
-	if (cur->prev != NULL)
-		cur->prev->next = cur;
+	(*nd)->next = list->next
+	if (list->next)
+		list->next->prev = *nd;
+	list->prev = (*nd)->prev;
+	list->next = *nd;
+	if ((*nd)->prev)
+		(*nd)->prev->next = list;
 	else
-		*list = cur;
-	return (cur);
+		*pr = list;
+	(*nd)->prev = list;
+	*nd = list->prev;
 }
 
 /**
