@@ -51,5 +51,5 @@ void quick_sort(int *array, size_t size);
 void shell_sort(int *array, size_t size);
 void heap_sort(int *array, size_t size);
 void quick_sort_hoare(int *array, size_t size);
-void swap_l(listint_t **nd, listint_t *list);
+void swap_l(listint_t **pr, listint_t **nd, listint_t *list);
 #endif /* SORT_H */
