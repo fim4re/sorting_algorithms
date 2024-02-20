@@ -30,7 +30,7 @@ void insertion_sort_list(listint_t **list)
 	listint_t *tm, *cur;
 	listint_t *cur2;
 
-	if (list == NULL || (*list)->next == NULL)
+	if (list == NULL || *list == NULL || (*list)->next == NULL)
 		return;
 
 	for (cur = (*list)->next; cur; cur = tm)
